@@ -6,7 +6,7 @@
     $job=$_POST['job'];
     $address=$_POST['address'];
     $salary=$_POST['salary'];
-    $sql="Insert Into saff (name, job, address,salary) values('".$name."','".$job."','".$address."','".$salary."')";
+    $sql="Insert Into staff1 (name, job, address,salary) values('".$name."','".$job."','".$address."','".$salary."')";
     $cn = new DBConnector();
     $return = $cn->execStatement($sql);
     header('location:index.php');
@@ -16,13 +16,13 @@
     $job=$_POST['job'];
     $address=$_POST['address'];
     $salary=$_POST['salary'];
-    $sql = "UPDATE saff SET name = '".$name."', job = '".$job."', address = '".$address."', salary =  '".$salary."' WHERE id = $id"; 
+    $sql = "UPDATE staff1 SET name = '".$name."', job = '".$job."', address = '".$address."', salary =  '".$salary."' WHERE id = $id"; 
     $cn = new DBConnector();
     $return = $cn->execStatement($sql);
     header('location:index.php');   
     }else{
     $id=$_GET['id'];
-    $sql="DELETE FROM saff WHERE id = $id";
+    $sql="DELETE FROM staff1 WHERE id = $id";
     $cn = new DBConnector();
     $return = $cn->execStatement($sql);    
     header('location:index.php'); 

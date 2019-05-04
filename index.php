@@ -92,7 +92,7 @@
                   <?php
                   require_once('./dbconnector.php');
                   $cn = new DBConnector();
-                  $sql="Select * from staff";
+                  $sql="Select * from staff1";
                   $rows = $cn->runQuery($sql);
                   foreach ($rows as $r) {
                   ?>  
