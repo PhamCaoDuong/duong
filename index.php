@@ -79,7 +79,7 @@
       </div>
 
      &nbsp;
-      <div class="panel panel-success">
+      <div class="panel panel-danger">
         <div class="panel-heading">Staff Info</div>
         <div class="panel-body">     
           <table class="table table-bordered">
