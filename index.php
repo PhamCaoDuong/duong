@@ -36,24 +36,23 @@
       }
       .row.content {height: auto;} 
     }
+    .jumbotron {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav">
-      <ul class="nav nav-pills nav-stacked">
-        &nbsp;
-        &nbsp;
-        &nbsp;
-        <li class="active"><a href="#section1" >ATN company</a></li>
-      </ul><br>
-    </div>
+<div class="jumbotron">
+  <div class="container text-center">
+     <h1 class="text-danger">ATN Company</h1>
+    <p class="bg-primary">Staff Management</p>
+  </div>
+</div>
 
-    <div class="col-sm-9">
+    <div class="col-sm-12">
      &nbsp;
-      <div class="panel panel-success">
+      <div class="panel panel-info">
         <div class="panel-heading">Staff Edit</div>
         <div class="panel-body" >     
           <form action="handling.php" method="post" enctype="MULTIPLE/form-data">
@@ -73,13 +72,13 @@
               <label for="pwd">Salary:</label>
               <td><input type="text" name="salary" class="form-control" value=""></td>
             </div>
-              <input type="submit" class="btn btn-info" name="them" id="them" value="Add">
+              <input type="submit" class="btn btn-warning" name="them" id="them" value="Add">
             </form>
         </div>
       </div>
 
      &nbsp;
-      <div class="panel panel-danger">
+      <div class="panel panel-success">
         <div class="panel-heading">Staff Info</div>
         <div class="panel-body">     
           <table class="table table-bordered">
@@ -106,7 +105,7 @@
                 <td><?=$r['address']?></td>
                 <td><?=$r['salary']?></td>
                 <td>
-                  <a href="handling.php?id=<?=$r['id']?>" class="btn btn-success" role="button" >
+                  <a href="handling.php?id=<?=$r['id']?>" class="btn btn-danger" role="button" >
                   DELETE
                   </a>
 
@@ -123,9 +122,7 @@
   </div>
 </div>
 
-<footer class="container-fluid">
-  <p>Footer Text</p>
-</footer>
+
 
 </body>
 </html>
