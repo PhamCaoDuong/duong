@@ -1,11 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title> Staff Management</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
@@ -49,10 +53,10 @@
 
     <div class="col-sm-9">
      &nbsp;
-      <div class="panel panel-primary">
+      <div class="panel panel-success">
         <div class="panel-heading">Staff Edit</div>
-        <div class="panel-body">     
-          <form action="" method="post" enctype="MULTIPLE/form-data">
+        <div class="panel-body" >     
+          <form action="handling.php" method="post" enctype="MULTIPLE/form-data">
             <div class="form-group">
               <label for="email">Name:</label>
               <input type="text" name="name" class="form-control" value="">
@@ -75,8 +79,8 @@
       </div>
 
      &nbsp;
-      <div class="panel panel-primary">
-        <div class="panel-heading">Staff Edit</div>
+      <div class="panel panel-success">
+        <div class="panel-heading">Staff Info</div>
         <div class="panel-body">     
           <table class="table table-bordered">
             <thead>
@@ -93,7 +97,7 @@
                   require_once('./dbconnector.php');
                   $cn = new DBConnector();
                   $sql="Select * from staff1";
-                  $rows = $cn->runQuery($sql);
+                  $rows = $cn->runQuery($sql) or die ("");
                   foreach ($rows as $r) {
                   ?>  
               <tr>
@@ -102,9 +106,10 @@
                 <td><?=$r['address']?></td>
                 <td><?=$r['salary']?></td>
                 <td>
-                  <a href="handling.php?id=<?=$r['id']?>" class="delete" title="Delete" data-toggle="tooltip">
-                    <i class="material-icons">&#xE872;</i>
+                  <a href="handling.php?id=<?=$r['id']?>" class="btn btn-success" role="button" >
+                  DELETE
                   </a>
+
                 </td> 
               </tr>
               <?php } ?>
